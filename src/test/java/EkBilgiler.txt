@@ -1,0 +1,9 @@
+document.addEventListener('keydown', function (e) {
+    if (e.keyCode == 119) { // F8
+        debugger;
+    }
+}, {
+    capture: true
+});
+sayfayı dondurmak için console yazarız, entere tıklayıp, işlemi tekrar yaparak f8 tuşuna basıyoruz
+bu kodu locate aldigimiz sayfada cikan terminale yapistiriyoruz

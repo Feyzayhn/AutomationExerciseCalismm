@@ -112,17 +112,51 @@ public class AutoExercisePage {
     @FindBy(xpath = "//*[.='Email Address already exist!']")
     public WebElement emailAdressMessage;
 
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement testCasesTitle;
+
+    //TC08
     @FindBy(css = ".material-icons.card_travel")
     public WebElement productsButton;
 
-    @FindBy(css = ".col-sm-4>div>div>div>p")
+    @FindBy(css = ".title.text-center")
+    public WebElement allProduct;
+
+    @FindBy(xpath = "//*[@class='features_items']//*[@class='col-sm-4']/div/div/div/p")    //*[@class='col-sm-4']/div/div/div/p
     public List<WebElement> productList;
 
-    @FindBy(css = "fa.fa-plus-square")
+    @FindBy(css = "a>.fa.fa-plus-square")
     public List<WebElement> viewProduct;
+    @FindBy(css = ".product-information")
+    public WebElement productInformation;
 
-    @FindBy(xpath = "//h2[@class='title text-center']")
-    public WebElement testCasesTitle;
+    @FindBy(css = ".product-information>h2")
+    public WebElement productName;
+
+    @FindBy(xpath = "(//*[@class='product-information']//p)[1]")
+    public WebElement productCategory;
+
+    @FindBy(xpath = "//div//span//span")
+    public WebElement productPrice;
+
+    @FindBy(xpath = "(//*[@class='product-information']//p)[2]")
+    public WebElement productAvailability;
+
+    @FindBy(xpath = "(//*[@class='product-information']//p)[3]")
+    public WebElement productCondition;
+
+    @FindBy(xpath = "(//*[@class='product-information']//p)[4]")
+    public WebElement productBrand;
+
+
+    //TC09
+
+    @FindBy(css = "input#search_product")
+    public WebElement searchProduct;
+
+    @FindBy(xpath = "//*[@id='submit_search']")
+    public WebElement searchButton;
+
 
 
 
