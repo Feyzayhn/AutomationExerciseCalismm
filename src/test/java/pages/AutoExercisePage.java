@@ -75,7 +75,7 @@ public class AutoExercisePage {
     @FindBy(xpath = "//a[@href='/logout']")
     public WebElement logoutButton;
 
-//06
+    //06
     @FindBy(css = ".fa.fa-envelope")
     public WebElement contactUs;
 
@@ -122,7 +122,8 @@ public class AutoExercisePage {
     @FindBy(css = ".title.text-center")
     public WebElement allProduct;
 
-    @FindBy(xpath = "//*[@class='features_items']//*[@class='col-sm-4']/div/div/div/p")    //*[@class='col-sm-4']/div/div/div/p
+    @FindBy(xpath = "//*[@class='features_items']//*[@class='col-sm-4']/div/div/div/p")
+    //*[@class='col-sm-4']/div/div/div/p
     public List<WebElement> productList;
 
     @FindBy(css = "a>.fa.fa-plus-square")
@@ -157,10 +158,81 @@ public class AutoExercisePage {
     @FindBy(xpath = "//*[@id='submit_search']")
     public WebElement searchButton;
 
+    @FindBy(css = ".title.text-center")
+    public WebElement searhcedProducts;
 
+    @FindBy(xpath = "//*[@class='productinfo text-center']/p")
+    public List<WebElement> searchedProductNames;
 
+    @FindBy(xpath = "//div[@class='features_items']")
+    public WebElement wantedProduct;
 
+    //TC10
 
+    @FindBy(xpath = "//h2[.='Subscription']")
+    public WebElement subscriptionTitle;
+
+    @FindBy(css = "#susbscribe_email")
+    public WebElement susbscribeEmail;
+
+    @FindBy(css = ".fa.fa-arrow-circle-o-right")
+    public WebElement subscriptionOkButton;
+
+    @FindBy(xpath = "//*[@class='alert-success alert']")
+    public WebElement subscriptionOkMessage;
+
+    //TC11
+
+    @FindBy(css = ".fa.fa-shopping-cart")
+    public WebElement cartButton;
+
+    //TC12
+    @FindBy(xpath = "(//a[text()='Add to cart'])[1]")
+    public WebElement addToCart1;
+
+    @FindBy(css = ".btn.btn-success.close-modal.btn-block")
+    public WebElement continioShopping;
+
+    @FindBy(xpath = "(//a[text()='Add to cart'])[3]")
+    public WebElement addToCart2;
+    @FindBy(css = "a>u")
+    public WebElement viewCart;
+
+    @FindBy(xpath = "//tr//td//a//img")
+    public List<WebElement> productListCart;
+
+    @FindBy(xpath = "//tr[1]//td[3]//p")
+    public WebElement firstProductPrice;
+
+    @FindBy(xpath = "//tr[2]//td[3]//p")
+    public WebElement secondProductPrice;
+
+    @FindBy(xpath = "//tr[1]//td[4]//button")
+    public WebElement firstProductQuantity;
+
+    @FindBy(xpath = "//tr[2]//td[4]//button")
+    public WebElement secondProductQuantity;
+
+    @FindBy(xpath = "//tr[1]//td[5]//p")
+    public WebElement firstProductTotal;
+
+    @FindBy(xpath = "//tr[2]//td[5]//p")
+    public WebElement secondProductTotal;
+
+    //TC13
+    @FindBy(css = ".fa.fa-plus-square")
+    public List<WebElement> viewButtonProductList;
+    @FindBy(css = ".product-information")
+    public WebElement productDetail;
+
+    @FindBy(css = "#quantity")
+    public WebElement quantity;
+
+    @FindBy(css = ".btn.btn-default.cart")
+    public WebElement addToCartButton;
+
+    @FindBy(xpath = "//tr//td[4]//button")
+    public WebElement quantityInCart;
 }
 
 
