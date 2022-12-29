@@ -36,12 +36,15 @@ public class T14_PlaceOrderRegisterWhileChekout {
 
     @Then("Click Proceed To Checkout")
     public void clickProceedToCheckout() {
+
         ReusableMethods.jsScrollClick(page.proceedToChechkoutButton);
     }
 
     @Then("Click Register Login button")
     public void clickRegisterLoginButton() {
-        page.registerLogin.click();
+
+        ReusableMethods.jsScrollClick(page.registerLogin);
+
     }
 
     @Then("Fill all details in Signup and create account")
@@ -102,7 +105,8 @@ public class T14_PlaceOrderRegisterWhileChekout {
 
     @Then("Click Pay and Confirm Order button")
     public void clickPayAndConfirmOrderButton() {
-        page.payAndConfirmOrderButton.click();
+        ReusableMethods.jsScrollClick(page.payAndConfirmOrderButton);
+
     }
 
     @Then("Verify success message Your order has been placed successfully!")
@@ -115,6 +119,7 @@ public class T14_PlaceOrderRegisterWhileChekout {
     public void verifyACCOUNTDELETEDAndClickContinueButton() {
 
         assertTrue(page.accountDeletedTitle.isDisplayed());
-        page.continueButtonDelete.click();
+        ReusableMethods.jsScrollClick(page.continueButtonDelete);
+
     }
 }

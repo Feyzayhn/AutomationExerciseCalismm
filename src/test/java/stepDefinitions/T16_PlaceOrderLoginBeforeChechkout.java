@@ -19,6 +19,9 @@ public class T16_PlaceOrderLoginBeforeChechkout {
     static String firstname;
     static String lastname;
     static String country;
+    static String email;
+    static String password;
+
     @Then("Fill email, password and click Login button")
     public void fillEmailPasswordAndClickLoginButton() {
 
@@ -26,8 +29,10 @@ public class T16_PlaceOrderLoginBeforeChechkout {
         List<String> windows = new ArrayList<>(getDriver().getWindowHandles());
         getDriver().switchTo().window(windows.get(1));
 
-        String email = Faker.instance().internet().emailAddress();
-        String password = Faker.instance().internet().password();
+        email = Faker.instance().internet().emailAddress();
+        password = Faker.instance().internet().password();
+
+
         firstname = Faker.instance().name().firstName();
         lastname = Faker.instance().name().lastName();
         phoneNumber = Faker.instance().phoneNumber().cellPhone();

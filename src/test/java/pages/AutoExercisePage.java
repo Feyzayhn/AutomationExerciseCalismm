@@ -285,7 +285,32 @@ public class AutoExercisePage {
     @FindBy(css = ".fa.fa-lock")
     public WebElement signupLoginButton;
 
+    //TC17
 
+    @FindBy(css = ".fa.fa-times")
+    public WebElement xButton;
+    @FindBy(css = ".text-center>b")
+    public WebElement cartIsEmpty;
+
+    //TC18
+    @FindBy(css = ".left-sidebar>h2")
+    public WebElement category;
+    @FindBy(xpath = "//a[@href='#Women']")
+    public WebElement womenCategory;
+    @FindBy(xpath = "//a[@href='#Men']/span")
+    public WebElement menCategory;
+
+    @FindBy(css = ".title.text-center")
+    public WebElement womenProducts;
+
+    @FindBy(css = "#Women>div>ul>li")
+    public List<WebElement> womenCategoryList;
+    @FindBy(xpath = "//*[@id='Women']/div/ul/li/a[.='Dress ']")
+    public WebElement dressLink;
+    @FindBy(xpath = "//*[@id='Men']/div/ul/li/a[.='Jeans ']")
+    public WebElement jeansLink;
+    @FindBy(css = "#Men>div>ul>li")
+    public List<WebElement> menCategoryList;
 }
 
 
