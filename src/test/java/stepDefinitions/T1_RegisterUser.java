@@ -9,7 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import pages.AutoExercisePage;
 import utilities.ConfigReader;
-import utilities.Driver2;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.*;
@@ -22,7 +22,7 @@ public class T1_RegisterUser {
     @Given("Navigate to url {string}")
     public void navigateToUrl(String url) {
 
-        Driver2.getDriver().get(ConfigReader.getProperty("autoUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
     }
 
     @When("Verify that home page is visible successfully")
@@ -165,7 +165,7 @@ public class T1_RegisterUser {
     @And("Quit Browser")
     public void quitBrowser() {
 
-        Driver2.quitDriver();
+        Driver.quitDriver();
     }
 
     @And("Wait {int} second")

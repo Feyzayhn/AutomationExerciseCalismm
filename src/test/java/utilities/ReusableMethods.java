@@ -21,8 +21,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.*;
 
-import static utilities.Driver2.driver;
-import static utilities.Driver2.getDriver;
+import static utilities.Driver.driver;
+import static utilities.Driver.getDriver;
 
 public class ReusableMethods {
 
@@ -117,12 +117,12 @@ public class ReusableMethods {
 
     //===============Explicit Wait==============//
     public static void waitForVisibility(WebElement element, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

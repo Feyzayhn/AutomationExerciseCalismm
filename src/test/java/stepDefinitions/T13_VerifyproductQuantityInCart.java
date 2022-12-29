@@ -3,15 +3,13 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.AutoExercisePage;
-import utilities.Driver2;
+import utilities.Driver;
 import utilities.ReusableMethods;
-
-import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class VerifyproductQuantityInCart {
+public class T13_VerifyproductQuantityInCart {
 
     AutoExercisePage page = new AutoExercisePage();
     String quantity1;
@@ -19,7 +17,7 @@ public class VerifyproductQuantityInCart {
     public void clickViewProductForAnyProductOnHomePage() {
         int index = ReusableMethods.random().nextInt(page.viewButtonProductList.size());
         ReusableMethods.jsScrollClick(page.viewButtonProductList.get(index));
-        Driver2.getDriver().navigate().refresh();
+        Driver.getDriver().navigate().refresh();
         ReusableMethods.jsScrollClick(page.viewButtonProductList.get(index));
     }
 

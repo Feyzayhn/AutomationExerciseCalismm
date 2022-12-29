@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.AutoExercisePage;
-import utilities.Driver2;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertEquals;
@@ -41,7 +41,7 @@ public class T6_ContantUsForm {
     @Then("User Upload file")
     public void userUploadFile() {
 
-        String fis = "C:\\Users\\VİCTUS\\IdeaProjects\\AutomationExerciseCalismam\\src\\resources\\car-2.jpg";
+        String fis = "C:\\Users\\feyza2\\IdeaProjects\\AutomationExerciseCalismam\\src\\resources\\car-2.jpg";
         page.uploadFile.sendKeys(fis);
     }
 
@@ -55,7 +55,7 @@ public class T6_ContantUsForm {
     public void userClickOKButton() {
 
         ReusableMethods.waitFor(3);
-        Driver2.getDriver().switchTo().alert().accept();
+        Driver.getDriver().switchTo().alert().accept();
     }
 
 
@@ -75,7 +75,7 @@ public class T6_ContantUsForm {
         page.homeButtonContact.click();
 
         String expectedData = "https://www.automationexercise.com/";
-        String actualData = Driver2.getDriver().getCurrentUrl();
+        String actualData = Driver.getDriver().getCurrentUrl();
         assertEquals(expectedData,actualData);
 
     }

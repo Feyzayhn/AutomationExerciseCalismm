@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 import pages.AutoExercisePage;
-import utilities.Driver2;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class T9_SearchProduct {
     public void enterProductNameInSearchInputAndClickSearchButton() {
 
         ReusableMethods.waitFor(3);
-        Driver2.getDriver().navigate().refresh();
+        Driver.getDriver().navigate().refresh();
         page.productsButton.click();
         page.searchProduct.sendKeys("Madame Top For Women");
         page.searchButton.click();

@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilities.Driver2;
+import utilities.Driver;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class AutoExercisePage {
 
     public AutoExercisePage() {
 
-        PageFactory.initElements(Driver2.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(css = "section#slider")
@@ -233,6 +233,59 @@ public class AutoExercisePage {
 
     @FindBy(xpath = "//tr//td[4]//button")
     public WebElement quantityInCart;
+
+
+    //TC14
+    @FindBy(css = ".active")
+    public WebElement shoppingCart;
+
+    @FindBy(css = ".btn.btn-default.check_out")
+    public WebElement proceedToChechkoutButton;
+
+    @FindBy(css = "div>p>a>u")
+    public WebElement registerLogin;
+
+    @FindBy(css = ".btn.btn-default.add-to-cart")
+    public List<WebElement> addToCartList;
+
+    @FindBy(css = "heading")
+    public List<WebElement> detailsReviewList;
+    @FindBy(css = ".form-control")
+    public WebElement descriptionBox;
+    @FindBy(css = ".btn.btn-default.check_out")
+    public WebElement placeHolderButton;
+
+    @FindBy(xpath = "//*[@data-qa='name-on-card']")
+    public WebElement nameOnCard;
+
+    @FindBy(xpath = "//*[@data-qa='card-number']")
+    public WebElement cardNumber;
+    @FindBy(css = ".form-control.card-cvc")
+    public WebElement cardCvv;
+
+    @FindBy(css = ".form-control.card-expiry-month")
+    public WebElement cardDate;
+
+    @FindBy(css = ".form-control.card-expiry-year")
+    public WebElement cardYear;
+
+    @FindBy(css = ".form-control.btn.btn-primary.submit-button")
+    public WebElement payAndConfirmOrderButton;
+
+    @FindBy(xpath = "//*[.='Congratulations! Your order has been confirmed!']")
+    public List<WebElement> successMessageOrder;
+
+    @FindBy(xpath = "//*[@data-qa='account-deleted']")
+    public WebElement accountDeletedTitle;
+
+    @FindBy(css = ".btn.btn-primary")
+    public WebElement continueButtonDelete;
+
+    //TC15
+    @FindBy(css = ".fa.fa-lock")
+    public WebElement signupLoginButton;
+
+
 }
 
 

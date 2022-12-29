@@ -2,10 +2,9 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import pages.AutoExercisePage;
-import utilities.Driver2;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
@@ -16,7 +15,7 @@ public class T12_AddProductsInCart {
     @Then("Click Products button")
     public void clickProductsButton() {
         page.productsButton.click();
-        Driver2.getDriver().navigate().refresh();
+        Driver.getDriver().navigate().refresh();
         page.productsButton.click();
     }
     @Then("Hover over first product and click Add to cart")

@@ -16,12 +16,12 @@ import java.time.Duration;
 import java.util.List;
 
 
-public abstract class Driver2 {
+public abstract class Driver {
 
     static final int timeout = 5;
     static WebDriver driver;
 
-    private Driver2() {
+    private Driver() {
 
     }
 
@@ -183,27 +183,27 @@ public abstract class Driver2 {
     }
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public static Boolean waitForInVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
     public static WebElement waitForClickablility(WebElement element, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static WebElement waitForClickablility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
@@ -214,7 +214,7 @@ public abstract class Driver2 {
             }
         };
         try {
-            WebDriverWait wait = new WebDriverWait(Driver2.getDriver(), Duration.ofSeconds(timeout));
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
             wait.until(expectation);
         } catch (Exception error) {
             error.printStackTrace();
@@ -222,7 +222,7 @@ public abstract class Driver2 {
     }
 
     public static void executeJScommand(WebElement element, String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver2.getDriver();
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command, element);
     }
 
@@ -243,8 +243,8 @@ public abstract class Driver2 {
      * @param element
      */
     public static void clickWithJS(WebElement element) {
-        ((JavascriptExecutor) Driver2.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-        ((JavascriptExecutor) Driver2.getDriver()).executeScript("arguments[0].click();", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
 
     /**
@@ -254,8 +254,8 @@ public abstract class Driver2 {
      */
     public static void clickWithJSAsList(List<WebElement> elements) {
         for (WebElement each : elements) {
-            ((JavascriptExecutor) Driver2.getDriver()).executeScript("arguments[0].scrollIntoView(true);", waitForVisibility(each, 5));
-            ((JavascriptExecutor) Driver2.getDriver()).executeScript("arguments[0].click();", each);
+            ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", waitForVisibility(each, 5));
+            ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", each);
         }
     }
 
@@ -265,7 +265,7 @@ public abstract class Driver2 {
      * @param element
      */
     public static void doubleClick(WebElement element) {
-        new Actions(Driver2.getDriver()).doubleClick(element).build().perform();
+        new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
 
     //    Parameter1 : WebElement
@@ -303,7 +303,7 @@ public abstract class Driver2 {
     }
 
     public static void waitAndClickLocationText(WebElement element, String value) {
-        Driver2.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
+        Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
 
     public static void selectDropDown(WebElement element) {
@@ -320,7 +320,7 @@ public abstract class Driver2 {
 
     public static void zoomInOut(int zoom) {
 
-        JavascriptExecutor js = (JavascriptExecutor) Driver2.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("document.body.style.zoom='" + zoom + "%'");
     }
 }//class
