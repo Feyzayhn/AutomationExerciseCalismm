@@ -16,8 +16,8 @@ public class T8_VerifyAllProductsandProductDetailPage {
 
     @Then("Click on Products button")
     public void clickOnProductsButton() {
+        ReusableMethods.jsScrollClick(page.productsButton);
 
-      page.productsButton.click();
     }
 
     @Then("Verify user is navigated to ALL PRODUCTS page successfully")
@@ -32,8 +32,8 @@ public class T8_VerifyAllProductsandProductDetailPage {
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitFor(3);
 
-        int number=1;
-        for (WebElement w: page.productList) {
+        int number = 1;
+        for (WebElement w : page.productList) {
             System.out.println(number + "=>" + w.getText());
             assertTrue(w.isDisplayed());
         }

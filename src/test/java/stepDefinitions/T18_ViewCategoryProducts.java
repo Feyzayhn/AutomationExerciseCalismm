@@ -55,7 +55,7 @@ public class T18_ViewCategoryProducts {
     @And("Verify that user is navigated to that category page")
     public void verifyThatUserIsNavigatedToThatCategoryPage() {
 
-
+     assertTrue(page.menCategoryAssert.isDisplayed());
     }
 
 

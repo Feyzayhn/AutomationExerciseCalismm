@@ -1,5 +1,6 @@
 package pages;
 
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -311,6 +312,78 @@ public class AutoExercisePage {
     public WebElement jeansLink;
     @FindBy(css = "#Men>div>ul>li")
     public List<WebElement> menCategoryList;
+
+    @FindBy(css = "div>ol>.active")
+    public WebElement menCategoryAssert;
+
+    //TC19
+    @FindBy(css = ".brands_products")
+    public WebElement brandsProducts;
+
+    @FindBy(xpath = "(//*[@class='brands-name']/ul/li/a/span)[1]")
+    public WebElement brandsProductsElement;
+
+    @FindBy(xpath = "(//*[@class='brands-name']/ul/li/a/span)[2]")
+    public WebElement brandsProductsElement2;
+
+    @FindBy(css = "div>ol>.active")
+    public WebElement getBrandsProductsVerify;
+
+    @FindBy(css = ".row>div>div>.title.text-center")
+    public WebElement brandsProductsTitle;
+
+    //TC20
+    @FindBy(css = "tbody>tr>td>h4>a")
+    public WebElement cartProducts;
+    @FindBy(css = ".btn.btn-default.add-to-cart")
+    public WebElement cartButton20;
+
+    //TC21
+    @FindBy(xpath = "//*[text()='Write Your Review']")
+    public WebElement writeYourReview;
+
+    @FindBy(xpath = "//*[@placeholder='Your Name']")
+    public WebElement writeYourName;
+
+    @FindBy(xpath = "//*[@placeholder='Email Address']")
+    public WebElement writeEmail;
+
+    @FindBy(xpath = "//*[@placeholder='Add Review Here!']")
+    public WebElement writeReview;
+
+   @FindBy(css = ".btn.btn-default.pull-right")
+    public WebElement submitWrite;
+
+   @FindBy(css = ".alert-success.alert>span")
+    public WebElement writeSuccess;
+
+    //TC22
+    @FindBy(css = ".recommended_items")
+    public WebElement recommendedItems;
+
+    @FindBy(css = ".recommended_items>div>div>div>div>div>div>div>a")
+    public List<WebElement> recommendedAddToCartList;
+
+    @FindBy(xpath = "//tbody/tr/td[2]")
+    public WebElement recommendedCartProduct;
+
+    //TC23
+    @FindBy(css = "#address_delivery>li")
+    public List<WebElement> deliveryAddressList;
+
+    @FindBy(css = "#address_invoice>li")
+    public List<WebElement> billingAddressList;
+
+    //TC24
+    @FindBy(css = ".btn.btn-default.check_out")
+    public WebElement downloadInvoice;
+
+    //TC25
+    @FindBy(css = ".fa.fa-angle-up")
+    public WebElement upwardButton;
+
+    @FindBy(xpath = "//h2[.='Full-Fledged practice website for Automation Engineers']")
+    public List<WebElement> upwardMessageList;
 }
 
 

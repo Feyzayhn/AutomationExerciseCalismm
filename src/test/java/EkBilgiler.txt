@@ -7,3 +7,10 @@ document.addEventListener('keydown', function (e) {
 });
 sayfayı dondurmak için console yazarız, entere tıklayıp, işlemi tekrar yaparak f8 tuşuna basıyoruz
 bu kodu locate aldigimiz sayfada cikan terminale yapistiriyoruz
+
+
+
+NOTE: DOWNLOAD OLARAK indirdigimiz bir dosyanin dogrulamasini yapmak istiyorsak asagidaki methodu kullanir p
+      bilgisayarimiza indigi yerden dosya yolunu aliriz
+String filePath = "C:\\Users\\feyza2\\Downloads\\invoice.txt";
+        assertTrue(Files.exists(Paths.get(filePath)));

@@ -21,9 +21,19 @@ public class Hooks {
     AutoExercisePage page = new AutoExercisePage();
     static String email;
     static String password;
-
+    static String state;
     static String name;
+    static String phoneNumber;
+    static String zipCode;
+    static String firstName;
+    static String lastName;
+    static String company;
+    static String address1;
+    static String address2;
+    static String gender;
+    static String country;
 
+static String city;
     @After
     public void tearDown(Scenario scenario) {
         final byte[] screenshot = ((TakesScreenshot)
@@ -80,17 +90,29 @@ public class Hooks {
         Driver.closeDriver();
     }
 
-    public  void  registerUser1(){
+    public void registerUser1() {
 
         name = Faker.instance().name().firstName();
         email = Faker.instance().internet().emailAddress();
         password = Faker.instance().internet().password();
+        state = Faker.instance().address().state();
+        city = Faker.instance().address().city();
+        zipCode= Faker.instance().address().zipCode();
+        phoneNumber =Faker.instance().phoneNumber().cellPhone();
+        firstName=Faker.instance().name().firstName();
+        lastName=Faker.instance().name().lastName();
+        company = Faker.instance().company().name();
+        address1=Faker.instance().address().streetAddress();
+        address2=  Faker.instance().address().fullAddress();
+
+
         page.nameBoxSignup.sendKeys(name);
         page.emailBoxSignup.sendKeys(email);
         page.signupButton.click();
 
-        int index= ReusableMethods.random().nextInt(page.genderList.size());
+        int index = ReusableMethods.random().nextInt(page.genderList.size());
         page.genderList.get(index).click();
+        gender = page.genderList.get(index).getText();
 
         page.passwordBoxNewSignup.sendKeys(password);
         ReusableMethods.selectDropDown(page.dayDDM);
@@ -103,22 +125,24 @@ public class Hooks {
         waitFor(3);
         getActions()
                 .click(page.firstnameBoxNewSignup)
-                .sendKeys(Faker.instance().name().firstName()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().name().lastName()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().company().name()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().address().streetAddress()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().address().fullAddress()).sendKeys(Keys.TAB).perform();
+                .sendKeys(firstName).sendKeys(Keys.TAB)
+                .sendKeys(lastName).sendKeys(Keys.TAB)
+                .sendKeys(company).sendKeys(Keys.TAB)
+                .sendKeys(address1).sendKeys(Keys.TAB)
+                .sendKeys(address2).sendKeys(Keys.TAB).perform();
 
         selectDdmIndex(page.country);
         jsScroll(page.country);
+        country = select(page.country).getFirstSelectedOption().getText();
+
         waitFor(3);
 
         getActions()
                 .click(page.state)
-                .sendKeys(Faker.instance().address().state()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().address().city()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().address().zipCode()).sendKeys(Keys.TAB)
-                .sendKeys(Faker.instance().phoneNumber().cellPhone()).perform();
+                .sendKeys(state).sendKeys(Keys.TAB)
+                .sendKeys(city).sendKeys(Keys.TAB)
+                .sendKeys(zipCode).sendKeys(Keys.TAB)
+                .sendKeys(phoneNumber).perform();
         jsScrollClick(page.createAccountButton);
     }
 }
